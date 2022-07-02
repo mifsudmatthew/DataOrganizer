@@ -1,10 +1,15 @@
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class DataOrganizer {
 
-    public static void main (String args[]){
+public class DataOrganizer implements ActionListener {
+
+    public static JButton newButton;
+    public static void main (String args[]) {
+
 
         Border titleBorder = BorderFactory.createLineBorder(Color.black,3);
 
@@ -33,10 +38,12 @@ public class DataOrganizer {
         buttonPanel.setOpaque(true);
 
         // adding 'new' button
-        JButton newButton = new JButton();
+
+        newButton = new JButton();
         newButton.setSize(120,40);
         newButton.setText("New");
         newButton.setLocation(110,20);
+
 
         // adding 'open' button
         JButton openButton = new JButton();
@@ -53,7 +60,14 @@ public class DataOrganizer {
         buttonPanel.add(openButton);
         buttonPanel.add(credits);
         frame.add(buttonPanel,BorderLayout.CENTER);
-
     }
+        @Override
+
+        public void actionPerformed (ActionEvent e) {
+
+            if (e.getSource() == newButton) {
+                System.out.println("yo");
+            }
+        }
 }
 

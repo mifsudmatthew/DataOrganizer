@@ -12,7 +12,6 @@ public class mainFrame extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.getContentPane().setBackground(backgroundColor);
         this.setVisible(true);
-
     }
 
 }
