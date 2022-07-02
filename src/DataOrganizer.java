@@ -24,6 +24,7 @@ public class DataOrganizer {
         title.setBorder(titleBorder);
         title.setBounds(80,30,250,40);
         frame.add(title);
+        //yo
 
         // configuring button panel.
         buttonPanel.setBounds(30,135,340,200);
