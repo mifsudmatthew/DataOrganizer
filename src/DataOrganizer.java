@@ -48,6 +48,7 @@ public class DataOrganizer implements ActionListener {
         buttonPanel.setBounds(30, 135, 340, 200);
         buttonPanel.setBackground(Color.orange);
         buttonPanel.setBorder(titleBorder);
+        buttonPanel.setLayout(new BorderLayout());
         buttonPanel.setOpaque(true);
 
         // adding 'new' button
@@ -74,14 +75,17 @@ public class DataOrganizer implements ActionListener {
         listener listen = new listener();
 
         // adding credits label
-        JLabel credits = new JLabel("By Matthew Mifsud", SwingConstants.CENTER);
-        credits.setBounds(110, 140, 120, 40);
+        JLabel credits = new JLabel("By Matthew Mifsud");
+        Dimension sizeCredits = credits.getPreferredSize();
+        credits.setBounds(115,150,sizeCredits.width,sizeCredits.height);
+        credits.setLocation(115,150);
+
 
         // adding each element together
         buttonPanel.add(newButton);
         buttonPanel.add(openButton);
         buttonPanel.add(credits);
-        frame.add(buttonPanel, BorderLayout.CENTER);
+        frame.add(buttonPanel);
 
     }
         @Override
