@@ -4,9 +4,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-// possible fix https://stackoverflow.com/questions/54985017/java-swing-components-layout-position-changes-after-restoring-a-minimized-window
 public class DataOrganizer implements ActionListener {
-
     public static JButton newButton;
     public static JButton openButton;
     public static JFrame newMenu;
@@ -33,7 +31,7 @@ public class DataOrganizer implements ActionListener {
         JPanel buttonPanel = new JPanel();
 
         // new title
-        JLabel title = new JLabel("Data Organizer v1.0");
+        JLabel title = new JLabel("Data Organizer Alpha");
         title.setForeground(Color.DARK_GRAY);
         title.setBackground(Color.orange);
         title.setOpaque(true);
@@ -48,7 +46,7 @@ public class DataOrganizer implements ActionListener {
         buttonPanel.setBounds(30, 135, 340, 200);
         buttonPanel.setBackground(Color.orange);
         buttonPanel.setBorder(titleBorder);
-        buttonPanel.setLayout(new BorderLayout());
+        buttonPanel.setLayout(null);  //new BoxLayout(buttonPanel, BoxLayout.PAGE_AXIS)
         buttonPanel.setOpaque(true);
 
         // adding 'new' button
@@ -77,16 +75,13 @@ public class DataOrganizer implements ActionListener {
         // adding credits label
         JLabel credits = new JLabel("By Matthew Mifsud");
         Dimension sizeCredits = credits.getPreferredSize();
-        credits.setBounds(115,150,sizeCredits.width,sizeCredits.height);
-        credits.setLocation(115,150);
-
+        credits.setBounds(115,160,sizeCredits.width,sizeCredits.height);
 
         // adding each element together
         buttonPanel.add(newButton);
         buttonPanel.add(openButton);
         buttonPanel.add(credits);
         frame.add(buttonPanel);
-
     }
         @Override
         public void actionPerformed (ActionEvent e) {
