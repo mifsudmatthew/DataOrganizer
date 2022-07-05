@@ -18,7 +18,7 @@ public class DataOrganizer implements ActionListener {
 
     public static void main (String args[]) {
         Dimension buttonDimensions = new Dimension();
-        Color backgroundColor = new Color(255,140,0);
+        Color backgroundColor = new Color(211,211,211);
         Border titleBorder = BorderFactory.createLineBorder(Color.black, 3);
 
         // new main frame
@@ -46,20 +46,21 @@ public class DataOrganizer implements ActionListener {
         title.setBackground(backgroundColor);
         title.setHorizontalAlignment(SwingConstants.CENTER);
         title.setOpaque(true);
-        title.setFont(new Font("Monospaced", Font.BOLD, 20));
+        title.setFont(new Font("SansSerif", Font.BOLD, 20));
         title.setBorder(titleBorder);
 
         // configuring button panel.
-        buttonPanel.setBackground(Color.orange);
+        buttonPanel.setBackground(new Color(100,100,100));
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
 
         // adding 'new' button
         newButton = new JButton();
         newButton.setText("New");
-        newButton.setBackground(Color.ORANGE);
+        newButton.setBackground(backgroundColor);
         newButton.setBorder(titleBorder);
         newButton.setFocusPainted(false);
         newButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        newButton.setFont(new Font("SansSerif", Font.BOLD, 15));
         buttonDimensions.width = 160;
         buttonDimensions.height = 60;
         newButton.setMaximumSize(buttonDimensions);
@@ -69,10 +70,11 @@ public class DataOrganizer implements ActionListener {
         openButton = new JButton();
         openButton.setSize(120, 40);
         openButton.setText("Open");
-        openButton.setBackground(Color.ORANGE);
+        openButton.setBackground(backgroundColor);
         openButton.setBorder(titleBorder);
         openButton.setFocusPainted(false);
         openButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        openButton.setFont(new Font("SansSerif", Font.BOLD, 15));
         buttonDimensions.width = 160;
         buttonDimensions.height = 60;
         openButton.setMaximumSize(buttonDimensions);
@@ -82,10 +84,11 @@ public class DataOrganizer implements ActionListener {
         updateButton = new JButton();
         updateButton.setSize(120, 40);
         updateButton.setText("Update");
-        updateButton.setBackground(Color.ORANGE);
+        updateButton.setBackground(backgroundColor);
         updateButton.setBorder(titleBorder);
         updateButton.setFocusPainted(false);
         updateButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        updateButton.setFont(new Font("SansSerif", Font.BOLD, 15));
         buttonDimensions.width = 160;
         buttonDimensions.height = 60;
         updateButton.setMaximumSize(buttonDimensions);
@@ -100,6 +103,7 @@ public class DataOrganizer implements ActionListener {
         credits.setSize(sizeCredits.width,sizeCredits.height);
         credits.setHorizontalAlignment(SwingConstants.CENTER);
         credits.setBorder(titleBorder);
+        credits.setBackground(backgroundColor);
 
 //       adding each element together
         frame.add(buttonPanel,BorderLayout.CENTER);
