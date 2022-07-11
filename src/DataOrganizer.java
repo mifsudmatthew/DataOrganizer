@@ -24,6 +24,8 @@ public class DataOrganizer implements ActionListener {
     public static JButton removeRowButton;
 
     public static JButton addColumnButton;
+
+    public static JButton removeColumnButton;
     public static JFrame newMenu;
     public static mainFrame frame;
     public static JTable jtable;
@@ -157,6 +159,18 @@ public class DataOrganizer implements ActionListener {
         buttonDimensions.height = 60;
         addColumnButton.setMaximumSize(buttonDimensions);
 
+        removeColumnButton = new JButton();
+        removeColumnButton.setSize(120, 40);
+        removeColumnButton.setText("Remove Column");
+        removeColumnButton.setBackground(backgroundColor);
+        removeColumnButton.setBorder(titleBorder);
+        removeColumnButton.setFocusPainted(false);
+        removeColumnButton.setAlignmentX(Component.CENTER_ALIGNMENT);
+        removeColumnButton.setFont(new Font("SansSerif", Font.BOLD, 15));
+        buttonDimensions.width = 160;
+        buttonDimensions.height = 60;
+        removeColumnButton.setMaximumSize(buttonDimensions);
+
         removeRowButton = new JButton();
         removeRowButton.setSize(120, 40);
         removeRowButton.setText("Remove Row");
@@ -195,7 +209,9 @@ public class DataOrganizer implements ActionListener {
         newMenu.add(scrollPane);
         newMenu.add(addRowButton,FlowLayout.CENTER);
         newMenu.add(removeRowButton,FlowLayout.RIGHT);
+        newMenu.add(removeColumnButton,FlowLayout.RIGHT);
         newMenu.add(addColumnButton,FlowLayout.RIGHT);
+
     }
         @Override
         public void actionPerformed (ActionEvent e) {
@@ -248,10 +264,15 @@ public class DataOrganizer implements ActionListener {
                 for(int i = 0;i<column.size();i++) {
                     jtable.getColumnModel().getColumn(i).setPreferredWidth(150);
                 }
+            }else if(e.getSource() == removeColumnButton){
+
+                column.remove(column.size()-1);
+                model.setColumnIdentifiers(column.toArray());
+                // setting column width
+
+                for(int i = 0;i<column.size();i++) {
+                    jtable.getColumnModel().getColumn(i).setPreferredWidth(150);
+                }
             }
-
         }
-
-
 }
-

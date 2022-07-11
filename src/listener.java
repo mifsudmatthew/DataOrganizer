@@ -6,5 +6,6 @@ public class listener extends DataOrganizer{
        addRowButton.addActionListener(this);
        removeRowButton.addActionListener(this);
        addColumnButton.addActionListener(this);
+       removeColumnButton.addActionListener(this);
     }
 }
